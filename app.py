@@ -21,7 +21,7 @@ roboflow_api_key = "gJ5NmruB1DqLsgYxaPAl"
 rf = Roboflow(api_key=roboflow_api_key)
 project = rf.workspace().project("lung-nodule-z4exc")
 model3 = project.version(1).model
-concatenated_model= tf.keras.models.load_model('D:\\FINAL PROJECT\\Implementation\\Final Project SK\\Fusion\\concat_pref.h5')
+concatenated_model= tf.keras.models.load_model('concat_pref.h5')
 
 class_names = ['Benign', 'Malignant', 'Normal']
 
