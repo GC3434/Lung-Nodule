@@ -73,7 +73,7 @@ def analyze_image():
      # Get the accuracy for the predicted class
     accuracy = predictions[0][predicted_class_index]   
     # Run prediction on the uploaded image using Roboflow model
-    prediction = model3.predict(img_path, confidence=40, overlap=30) last commit
+    prediction = model3.predict(img_path, confidence=40, overlap=30)
 
     # # Visualize the prediction and save the image
     pred_path = "static/images/prediction.jpg"
