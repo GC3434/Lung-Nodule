@@ -21,7 +21,17 @@ roboflow_api_key = "gJ5NmruB1DqLsgYxaPAl"
 rf = Roboflow(api_key=roboflow_api_key)
 project = rf.workspace().project("lung-nodule-z4exc")
 model3 = project.version(1).model
-concatenated_model= tf.keras.models.load_model('concat_pref.h5')
+
+import os
+
+# Get the directory path of the current script
+current_dir = os.path.dirname(os.path.abspath(__file__))
+model_file = os.path.join(current_dir, 'concat_pref.h5')
+
+concatenated_model = tf.keras.models.load_model(model_file)
+
+
+#concatenated_model= tf.keras.models.load_model('concat_pref.h5')
 
 class_names = ['Benign', 'Malignant', 'Normal']
 
